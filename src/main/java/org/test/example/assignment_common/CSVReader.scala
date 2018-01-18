@@ -17,7 +17,7 @@ object CSVReader {
       System.exit(1)
     }
     val ReadBookingDF = sc.read.format("csv")
-      .option("sep", ",")
+      .option("sep", "|")
       .option("inferSchema", "true")
       .option("header", "true")
       .option("dateFormat","dd-MM-yyyy")
@@ -27,7 +27,7 @@ object CSVReader {
       ReadBookingDF.createOrReplaceTempView("tabA")
       
       val ReadHotelDF = sc.read.format("csv")
-      .option("sep", ",")
+      .option("sep", "|")
       .option("inferSchema", "true")
       .option("header", "true")
       .option("dateFormat","dd-MM-yyyy")
@@ -36,7 +36,7 @@ object CSVReader {
       ReadHotelDF.createOrReplaceTempView("tabB")
       
       val ReadCustomerDF = sc.read.format("csv")
-      .option("sep", ",")
+      .option("sep", "|")
       .option("inferSchema", "true")
       .option("header", "true")
       .option("dateFormat","dd-MM-yyyy")
