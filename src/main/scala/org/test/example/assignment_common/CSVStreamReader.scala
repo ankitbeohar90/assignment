@@ -1,4 +1,9 @@
 package org.test.example.assignment_common
+/**
+ * @author Ankit Beohar
+ * This is just a demo to describe how we can use structred streaming concept
+ * of Spark 2.x
+ * */
 import java.util.Properties
 
 import org.apache.spark.sql.SparkSession
