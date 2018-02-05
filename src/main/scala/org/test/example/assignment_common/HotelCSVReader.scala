@@ -10,11 +10,11 @@ package org.test.example.assignment_common
 
 import org.apache.spark.sql.DataFrame
 import org.slf4j.LoggerFactory
-
+import java.util.Calendar
 
 object HotelCSVReader {
   val logger = LoggerFactory.getLogger(HotelCSVReader.getClass)    
-    
+  val startTime = Calendar.getInstance().getTimeInMillis  
   def readData(args:String):DataFrame= {
     val sc = SparkSessionLoader.getSparkSession()
     
@@ -28,6 +28,8 @@ object HotelCSVReader {
       ReadCustomerDF.createOrReplaceTempView("hotelTab")
       
       val hotelDf = sc.sql("select * from hotelTab")
+      val endTime = Calendar.getInstance().getTimeInMillis
+      logger.debug("Hotel Reader Processing Time===>> "+ ((endTime-startTime)/1000.0))
       return hotelDf 
   }
  
