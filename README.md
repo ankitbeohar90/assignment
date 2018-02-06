@@ -5,5 +5,5 @@ run as scala application.
 ./bin/spark-submit --class CSVReader assignment-common-0.0.1-SNAPSHOT.jar \ 
 <booking file name> <hotel file name> <customer file name> <metricA file name> <metricB file name> <metricC file name>
 
-## Note========>>> Please refer Assignment.docx which is sent seperately for more clearity.
+## Note========>>> Please refer Assignment.docx which is sent seperately or wiki of this repo for more clearity.
 
